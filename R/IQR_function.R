@@ -7,3 +7,4 @@ iqr_outlier_flags <- function(x, na.rm = TRUE, coef = 1.5) {
   upper <- q3 + coef * iqr
   x < lower | x > upper
 }
+
