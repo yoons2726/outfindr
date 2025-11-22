@@ -4,5 +4,3 @@ outfindr <- function(data, method, range=NULL) {
   if(method=="KNN"){print()}
   else{print("please specify method: IQR, Range, KNN");stop()}
 }
-
-
