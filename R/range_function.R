@@ -1,4 +1,4 @@
-
+# function flagging user specified outlier
 range_outlier_flags <- function(data, var, range) {
   x <- data[[var]]
   lower <- range[1]
