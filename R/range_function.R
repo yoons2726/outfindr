@@ -13,7 +13,7 @@
 #' @keywords internal
 
 # function flagging user specified outlier
-range_outlier_flags <- function(data, var, range,na,rm=na.rm) {
+range_outlier_flags <- function(data, var, range,na.rm=na.rm) {
   # check if range is not null and is numeric and is a two-element vector
   if(is.null(range) | !is.numeric(range) | length(range) != 2) {
     stop("Please specify a valid range.")

@@ -33,7 +33,7 @@ Options are:
   less than \code{range[1]} or strictly greater than \code{range[2]}.
   \item \code{"KNN"}: Uses K-Nearest Neighbors distance scores.
   Computes the distance from each observation to its
-  \eqn{k}-th nearest neighbor. These distances are ranked, and an observation
+  k-th nearest neighbor. These distances are ranked, and an observation
   is flagged as an outlier if its distance score is above the \code{cutoff}
   percentile (e.g., the top 5\% of distances if \code{cutoff = 0.95}).
 }}

@@ -4,7 +4,7 @@
 \alias{range_outlier_flags}
 \title{Flag Outliers using a User-Specified Range}
 \usage{
-range_outlier_flags(data, var, range)
+range_outlier_flags(data, var, range, na.rm = na.rm)
 }
 \arguments{
 \item{data}{A data frame containing the variable of interest.}
