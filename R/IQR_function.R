@@ -13,7 +13,7 @@
 #'
 #' @keywords internal
 ## function calculating iqr range
-iqr_outlier_flags <- function(data, var, na.rm = na.rm, coef = coef) {
+iqr_outlier_flags <- function(data, var, coef = coef, na.rm = na.rm) {
   x <- data[[var]]
   q1  <- quantile(x, 0.25, na.rm = na.rm)
   q3  <- quantile(x, 0.75, na.rm = na.rm)

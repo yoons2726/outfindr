@@ -4,17 +4,17 @@
 \alias{iqr_outlier_flags}
 \title{Flag Outliers using Interquartile Range (IQR)}
 \usage{
-iqr_outlier_flags(data, var, na.rm = na.rm, coef = coef)
+iqr_outlier_flags(data, var, coef = coef, na.rm = na.rm)
 }
 \arguments{
 \item{data}{A data frame containing the variable of interest.}
 
 \item{var}{A character string specifying the column name in `data` to analyze.}
 
-\item{na.rm}{Logical. If `TRUE`, missing values are removed before calculating quartiles.}
-
 \item{coef}{Numeric. The multiplier for the IQR to determine outlier fences.
 Common values are 1.5 (mild outliers) or 3 (extreme outliers).}
+
+\item{na.rm}{Logical. If `TRUE`, missing values are removed before calculating quartiles.}
 }
 \value{
 A logical vector of the same length as the input column, where `TRUE` indicates an outlier.
