@@ -18,7 +18,7 @@
 #'     less than \code{range[1]} or strictly greater than \code{range[2]}.
 #'     \item \code{"KNN"}: Uses K-Nearest Neighbors distance scores.
 #'     Computes the distance from each observation to its
-#'     \eqn{k}-th nearest neighbor. These distances are ranked, and an observation
+#'     k-th nearest neighbor. These distances are ranked, and an observation
 #'     is flagged as an outlier if its distance score is above the \code{cutoff}
 #'     percentile (e.g., the top 5\% of distances if \code{cutoff = 0.95}).
 #'   }
@@ -60,7 +60,8 @@ outfindr <- function(var, data, method=c("IQR","range","KNN"),
 
   # 2. Check if any TRUE values exist
   if (sum(idx) == 0) {
-    return("No outliers found.")
+    cat("No outliers found.\n")
+    invisible()
   } else {
     return(data[idx, ])
   }
