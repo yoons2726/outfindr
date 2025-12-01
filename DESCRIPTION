@@ -11,3 +11,6 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/yoons2726/outfindr
 BugReports: https://github.com/yoons2726/outfindr/issues
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
