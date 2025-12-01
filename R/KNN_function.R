@@ -1,9 +1,9 @@
 ## KNN-based outlier flags for a single variable
 knn_outlier_flags <- function(data,
                               var,
-                              k = 5,
-                              cutoff = 0.95,
-                              na.rm = TRUE) {
+                              k = k,
+                              cutoff = cutoff,
+                              na.rm = na.rm) {
 
   # allow unquoted column name: knn_outlier_flags(df, age)
  # var_name <- deparse(substitute(var))
