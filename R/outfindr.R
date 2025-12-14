@@ -59,7 +59,7 @@ outfindr <- function(var, data, method=c("IQR","range","KNN"),
   idx[is.na(idx)] <- if (na.rm) FALSE else NA
 
   # 2. Check if any TRUE values exist
-  if (sum(idx) == 0) {
+  if (sum(idx,na.rm=T) == 0) {
     cat("No outliers found.\n")
     invisible()
   } else {
