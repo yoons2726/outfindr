@@ -19,6 +19,7 @@ range_outlier_flags <- function(data, var, range,na.rm=na.rm) {
     stop("Please specify a valid range.")
   }
   # handle NAs
+  x <- data[[var]]
   if (na.rm) {
     keep <- !is.na(x)
     x_clean <- x[keep]
@@ -27,7 +28,7 @@ range_outlier_flags <- function(data, var, range,na.rm=na.rm) {
     keep <- rep(TRUE, length(x))
   }
 
-  x <- data[[var]]
+
   lower <- range[1]
   upper <- range[2]
 
