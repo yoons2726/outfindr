@@ -56,7 +56,7 @@ outfindr <- function(var, data, method=c("IQR","range","KNN"),
 
   # 1. Sanitize the index vector: Treat NAs as FALSE (not outliers)
   # This prevents rows of NAs from appearing in the output
-  flags[is.na(flags)] <- if (na.rm) FALSE else NA
+  idx[is.na(idx)] <- if (na.rm) FALSE else NA
 
   # 2. Check if any TRUE values exist
   if (sum(idx) == 0) {
