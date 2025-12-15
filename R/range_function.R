@@ -33,6 +33,6 @@ range_outlier_flags <- function(data, var, range,na.rm=na.rm) {
   upper <- range[2]
 
   # Identify outliers
-  x < lower | x > upper
+  x <= lower | x >= upper
 }
 
