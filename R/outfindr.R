@@ -48,22 +48,17 @@ outfindr <- function(var, data, method=c("IQR","range","KNN"),
 
   # Validate method first (moved to top for better error handling)
   if(!method %in% c("IQR","range","KNN")){stop("Please specify method: IQR, range, KNN.")}
-
+  # cleaning NA's
+  x <- data[[var]]
   idx <- 0
-  if(method=="IQR"){idx <- iqr_outlier_flags(data,var,coef,na.rm)}
-  if(method=="range"){idx <- range_outlier_flags(data,var,range,na.rm)}
-  if(method=="KNN"){idx <- knn_outlier_flags(data,var,k,cutoff,na.rm)}
+  if(method=="IQR"){idx <- iqr_outlier_flags(x,coef,na.rm)}
+  if(method=="range"){idx <- range_outlier_flags(x,range,na.rm)}
+  if(method=="KNN"){idx <- knn_outlier_flags(x,k,cutoff,na.rm)}
 
-  # 1. Sanitize the index vector: Treat NAs as FALSE (not outliers)
-  # This prevents rows of NAs from appearing in the output
-  idx[is.na(idx)] <- if (na.rm) FALSE else NA
-
-  # 2. Check if any TRUE values exist
-  if (sum(idx,na.rm=T) == 0) {
+  # Check presence of outliers
+  if(sum(idx,na.rm=T)==0){
     cat("No outliers found.\n")
     invisible()
-  } else {
-    return(data[idx, ])
-  }
+  } else return(data[idx,])
 }
 

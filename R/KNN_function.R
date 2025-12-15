@@ -23,15 +23,14 @@
 #'
 #' @keywords internal
 ## KNN-based outlier flags for a single variable
-knn_outlier_flags <- function(data,
-                              var,
+knn_outlier_flags <- function(x,
                               k = k,
                               cutoff = cutoff,
                               na.rm = na.rm) {
 
   # allow unquoted column name: knn_outlier_flags(df, age)
  # var_name <- deparse(substitute(var))
-  x <- data[[var]]
+
 
   if (!is.numeric(x)) {
     stop("Selected variable must be numeric for KNN method.")
